@@ -11,7 +11,9 @@
     class="bg-[url('../../src/assets/night-moon.jpg')] bg-cover bg-center bg-no-repeat h-screen max-h-screen"
   >
     <!-- ================= HEADER ================= -->
-    <div class="bg-blue-950 text-white backdrop-blur-sm bg-opacity-50 py-6">
+    <div
+      class="bg-blue-950 text-white backdrop-blur-sm bg-opacity-50 pt-6 pb-4"
+    >
       <div
         class="max-w-screen-sm mx-auto h-full flex flex-col items-center gap-y-3 px-4"
       >
@@ -21,82 +23,60 @@
         >
           <h1 class="text-3xl font-black tracking-widest">todo list</h1>
           <p class="text-slate-400 text-sm font-light">
+            what do you want to get done today?
+          </p>
         </div>
 
         <!-- input field -->
         <div
-          class="flex items-center justify-between gap-x-2 rounded-full border-2 w-full"
+          class="flex items-center justify-between gap-x-2 rounded-full border-2 w-full mb-2"
         >
           <input
             type="text"
-            name="todo_input"
-            id="todo_input"
+            name="add_todo_input"
+            id="add_todo_input"
             placeholder="add new todo ..."
             class="bg-transparent w-full focus:outline-none pl-4 py-2.5 placeholder:capitalize placeholder:text-slate-300 placeholder:font-light text-sm"
           />
-          <button type="button" class="mr-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12 4.5v15m7.5-7.5h-15"
-              />
-            </svg>
+          <button
+            id="add_todo_btn"
+            type="button"
+            class="px-3 bg-white text-slate-900 uppercase text-sm py-1.5 rounded-full mr-1"
+          >
+            add
           </button>
         </div>
         <!-- filters -->
         <ul
+          id="filters"
           class="flex items-center gap-x-4 capitalize font-light sm:font-normal text-sm"
         >
-          <li data-id="all" class="cursor-pointer">all</li>
-          <li data-id="completed" class="cursor-pointer">completed</li>
-          <li data-id="uncompleted" class="cursor-pointer">uncompleted</li>
+          <li data-id="all" class="filter-item">all</li>
+          <li data-id="completed" class="filter-item">completed</li>
+          <li data-id="uncompleted" class="filter-item">uncompleted</li>
         </ul>
       </div>
     </div>
 
     <!-- ================= LIST OF TODOs ================= -->
     <ul
-      class="max-w-screen-sm mx-auto p-4 flex flex-col gap-y-2 h-[calc(100vh_-_255px)] overflow-y-auto"
-    >
-      <li
-        class="flex items-center justify-between bg-white shadow-sm text-blue-900 px-4 py-2 sm:py-2.5 rounded-full"
-      >
-        <span class="text-base capitalize font-medium">todo</span>
-        <button type="button">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-5 h-5"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        </button>
-      </li>
-    </ul>
+      id="todo_list"
+      class="max-w-screen-sm mx-auto p-4 flex flex-col gap-y-2 h-[calc(100vh_-_253px)] sm:h-[calc(100vh_-_257px)] overflow-y-auto"
+    ></ul>
 
     <!-- ================= INFO ================= -->
     <div
+      id="todos_info"
       class="max-w-screen-sm mx-auto flex items-center justify-between w-full font-normal text-sm sm:text-base px-4 py-4 text-white"
     >
-      <span class="capitalize">remain items</span>
+      <span id="remained_todos" class="capitalize">remain items</span>
       <div class="flex items-center gap-x-4">
-        <button class="capitalize">clear all</button>
-        <button class="capitalize">clear completed</button>
+        <button type="button" id="clear_all_btn" class="capitalize">
+          clear all
+        </button>
+        <button type="button" id="clear_completed_btn" class="capitalize">
+          clear completed
+        </button>
       </div>
     </div>
 
